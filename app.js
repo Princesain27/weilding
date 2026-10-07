@@ -633,6 +633,16 @@ function updateCart() {
 
   }
 
+  const mobileCountElement =
+    $('mobileCartCount');
+
+  if (mobileCountElement) {
+
+    mobileCountElement.textContent =
+      cartCount();
+
+  }
+
 }
 
 
@@ -809,11 +819,130 @@ function renderPageCart() {
 
 
 // ==========================================
+// MOBILE MENU
+// ==========================================
+
+function closeMobileMenu() {
+
+  const menu =
+    $('mobileMenu');
+
+  const toggle =
+    $('mobileMenuToggle');
+
+  if (!menu) {
+    return;
+  }
+
+  menu.classList.remove('open');
+
+  menu.setAttribute(
+    'aria-hidden',
+    'true'
+  );
+
+  if (toggle) {
+
+    toggle.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+
+    toggle.setAttribute(
+      'aria-label',
+      'Open menu'
+    );
+
+    toggle.textContent = '☰';
+
+  }
+
+}
+
+
+window.toggleMobileMenu =
+  function() {
+
+    const menu =
+      $('mobileMenu');
+
+    const toggle =
+      $('mobileMenuToggle');
+
+    if (!menu) {
+      return;
+    }
+
+    const isOpen =
+      menu.classList.toggle('open');
+
+    menu.setAttribute(
+      'aria-hidden',
+      String(!isOpen)
+    );
+
+    if (toggle) {
+
+      toggle.setAttribute(
+        'aria-expanded',
+        String(isOpen)
+      );
+
+      toggle.setAttribute(
+        'aria-label',
+        isOpen
+          ? 'Close menu'
+          : 'Open menu'
+      );
+
+      toggle.textContent =
+        isOpen ? '✕' : '☰';
+
+    }
+
+  };
+
+
+// Close menu if user taps outside it
+document.addEventListener(
+  'click',
+  event => {
+
+    const menu =
+      $('mobileMenu');
+
+    const toggle =
+      $('mobileMenuToggle');
+
+    if (
+      !menu ||
+      !toggle ||
+      !menu.classList.contains('open')
+    ) {
+      return;
+    }
+
+    if (
+      !menu.contains(event.target) &&
+      !toggle.contains(event.target)
+    ) {
+
+      closeMobileMenu();
+
+    }
+
+  }
+);
+
+
+// ==========================================
 // PAGE NAVIGATION
 // ==========================================
 
 window.goPage =
   async function(page) {
+
+    closeMobileMenu();
 
 
     document

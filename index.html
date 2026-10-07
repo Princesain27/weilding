@@ -1,13 +1,287 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Durga Lakshmi Welding Solution</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Durga Lakshmi Welding Solution</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body><div class="app"><header><div class="nav"><div class="logo"><div class="logoMark">DL</div><div>Durga Lakshmi <span style="color:var(--accent)">Welding Solution</span></div></div><div class="navlinks"><button onclick="goPage('home')">Home</button><button onclick="goPage('about')">About Us</button><button onclick="goPage('products')">Products</button><button onclick="goPage('services')">Services</button><button onclick="goPage('contact')">Contact</button><button class="cartBtn" onclick="goPage('cart')">Cart <span class="count" id="cartCount">0</span></button><button onclick="goPage('admin')">Admin</button></div></div></header><main><section class="hero sitePage activePage" id="page-home"><div><div class="eyebrow">Industrial Welding • Trusted Supply • Fast Service</div><h1>Reliable welding products for every workshop.</h1><p>Durga Lakshmi Welding Solution supplies welding electrodes, machines, accessories and workshop essentials with dependable quality and straightforward ordering.</p><div class="actions"><button class="primary" onclick="goPage('products')">View Products →</button><button class="secondary" onclick="goPage('contact')">Get a Quote</button></div></div><div class="heroCard bannerCard"><img src="DLWS-banner.png" alt="Durga Lakshmi Welding Solution Banner"></div></section><div class="industrialStrip"><div class="trustBox"><b>✓ Quality Products</b><span>Workshop-ready welding range</span></div><div class="trustBox"><b>✓ Competitive Pricing</b><span>Value for regular buyers</span></div><div class="trustBox"><b>✓ WhatsApp Ordering</b><span>Simple and fast order flow</span></div><div class="trustBox"><b>✓ Business Support</b><span>For fabricators & workshops</span></div></div><section class="homeSections sitePage" id="page-homeExtra"><div class="sectionHead"><div><h2>Why choose Durga Lakshmi?</h2><p>A practical supplier built around quality, availability and service.</p></div></div><div class="featureGrid"><div class="feature"><div class="featureIcon">⚡</div><h3>Welding Electrodes</h3><p>Mild steel and specialty electrodes for fabrication, repair and daily workshop work.</p></div><div class="feature"><div class="featureIcon">🔧</div><h3>Welding Machines</h3><p>Inverter, MIG and workshop appliances for different welding requirements.</p></div><div class="feature"><div class="featureIcon">🛡️</div><h3>Accessories & Safety</h3><p>Holders, cables, helmets and essential welding accessories in one place.</p></div></div><div class="ctaBand"><div><h2 style="margin:0">Need a bulk or business quote?</h2><p>Send your requirement directly on WhatsApp.</p></div><button class="primary" onclick="goPage('contact')">Contact Us →</button></div></section><section class="section sitePage" id="page-products"><div class="pageTitle" style="padding-left:0;padding-right:0"><div class="eyebrow">Product Catalogue</div><h1>Welding Products</h1><p>Choose your category, add products to cart and see your total instantly.</p></div><div class="sectionHead"><div><h2>Our Range</h2><p>Electrodes, machines and workshop accessories.</p></div><div class="filters"><button class="filter active" onclick="filter('All',this)">All</button><button class="filter" onclick="filter('Electrodes',this)">Electrodes</button><button class="filter" onclick="filter('Appliances',this)">Machines & Accessories</button></div></div><div class="grid" id="grid"></div></section><section class="sitePage" id="page-about"><div class="pageTitle"><div class="eyebrow">About Our Company</div><h1>Durga Lakshmi Welding Solution</h1><div class="redLine"></div><p>We aim to be a dependable welding-products partner for fabricators, workshops, contractors and industrial buyers.</p></div><div class="homeSections"><div class="featureGrid"><div class="feature"><div class="featureIcon">🏭</div><h3>Industrial Focus</h3><p>Products selected for practical workshop and fabrication requirements.</p></div><div class="feature"><div class="featureIcon">🤝</div><h3>Long-Term Service</h3><p>We focus on repeat business, transparent dealing and responsive support.</p></div><div class="feature"><div class="featureIcon">📦</div><h3>Easy Ordering</h3><p>Browse online, build your cart and send the requirement directly through WhatsApp.</p></div></div></div></section><section class="sitePage" id="page-services"><div class="pageTitle"><div class="eyebrow">What We Provide</div><h1>Services</h1><p>From everyday workshop supplies to business and bulk requirements.</p></div><div class="homeSections"><div class="featureGrid"><div class="feature"><div class="featureIcon">⚙️</div><h3>Product Supply</h3><p>Welding electrodes, machines, cables, holders, helmets and workshop accessories.</p></div><div class="feature"><div class="featureIcon">📋</div><h3>Bulk Requirements</h3><p>Share your quantity and requirement for a customised business quote.</p></div><div class="feature"><div class="featureIcon">💬</div><h3>WhatsApp Support</h3><p>Fast communication for product questions, order details and availability.</p></div></div></div></section><section class="sitePage" id="page-contact"><div class="pageTitle"><div class="eyebrow">Get In Touch</div><h1>Contact Durga Lakshmi</h1><p>Have a product requirement or need a quote? Send us the details.</p></div><div class="homeSections"><div class="contactGrid"><div class="contactCard"><h2>Business Enquiry</h2><div class="redLine"></div><p><b>Durga Lakshmi Welding Solution</b></p><p>Welding electrodes • Machines • Accessories • Safety products</p><p>📞 Call / WhatsApp: <b>+91 8295993117</b><br>📍 Haryana, India</p><button class="primary" onclick="window.open('https://wa.me/918295993117','_blank')">WhatsApp Us ↗</button></div><div class="contactCard"><h2>Request a Quote</h2><input class="field" placeholder="Your name"><input class="field" placeholder="Mobile number"><input class="field" placeholder="Product / requirement"><textarea class="field" rows="5" placeholder="Quantity or message"></textarea><button class="primary" style="width:100%" onclick="toast('Quote request ready for WhatsApp')">Send Enquiry</button></div></div></div></section><section class="sitePage" id="page-cart"><div class="pageTitle"><div class="eyebrow">Order Checkout</div><h1>Your Cart</h1><p>Review your items, check the exact total and send the complete order to WhatsApp.</p></div><div class="fullCart"><div class="cartGrid"><div class="fullCard"><h2>Selected Products</h2><div id="pageCartItems"></div></div><div class="fullCard"><h2>Order Summary</h2><div style="display:flex;justify-content:space-between;margin:12px 0;color:var(--muted)"><span>Total Items</span><span id="pageItemCount">0</span></div><div class="total"><span>Total</span><span id="pageCartTotal">₹0</span></div><h3>Customer Details</h3><input class="field" id="pageCustName" placeholder="Full name"><input class="field" id="pageCustPhone" placeholder="Mobile number"><textarea class="field" id="pageCustAddress" rows="4" placeholder="Delivery address"></textarea><button class="primary" style="width:100%" onclick="sendPageWhatsApp()">Order on WhatsApp ↗</button></div></div></div></section><section class="sitePage" id="page-admin"><div class="pageTitle"><div class="eyebrow">Management</div><h1>Admin Dashboard</h1><p>Manage orders, products, customers and store performance.</p></div><div class="fullAdmin"><div class="sideMenu"><button class="active">Overview</button><button>Orders</button><button>Products</button><button>Customers</button><button>Settings</button></div><div class="adminGrid"><div class="adminStat"><small>Total Orders</small><b>128</b></div><div class="adminStat"><small>Revenue</small><b>₹2.84L</b></div><div class="adminStat"><small>Products</small><b>42</b></div><div class="adminStat"><small>Pending</small><b>9</b></div></div><div class="fullCard" style="margin-top:20px"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><h2>Recent Orders</h2><button class="primary" onclick="toast('Add Product form opened')">+ Add Product</button></div><table class="adminTable"><thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th></tr></thead><tbody><tr><td>#DL-1028</td><td>Rahul Sharma</td><td>3</td><td>₹4,850</td><td><span class="status">New</span></td></tr><tr><td>#DL-1027</td><td>Aman Kumar</td><td>7</td><td>₹9,420</td><td><span class="status">Confirmed</span></td></tr><tr><td>#DL-1026</td><td>Neeraj</td><td>2</td><td>₹2,150</td><td><span class="status">Processing</span></td></tr></tbody></table></div></div></section></main><div class="toast" id="toast"></div>
 
-</div>
+<body>
+  <div class="app">
+    <header>
+      <div class="nav">
+        <div class="logo">
+          <div class="logoMark">DL</div>
+          <div>Durga Lakshmi <span style="color:var(--accent)">Welding Solution</span></div>
+        </div>
+        <div class="navlinks"><button onclick="goPage('home')">Home</button><button onclick="goPage('about')">About
+            Us</button><button onclick="goPage('products')">Products</button><button
+            onclick="goPage('services')">Services</button><button onclick="goPage('contact')">Contact</button><button
+            class="cartBtn" onclick="goPage('cart')">Cart <span class="count" id="cartCount">0</span></button><button
+            onclick="goPage('admin')">Admin</button></div>
+
+        <button
+          class="mobileMenuToggle"
+          id="mobileMenuToggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          onclick="toggleMobileMenu()"
+        >☰</button>
+
+        <div
+          class="mobileMenu"
+          id="mobileMenu"
+          aria-hidden="true"
+        >
+          <button onclick="goPage('home')">🏠 Home</button>
+          <button onclick="goPage('about')">ℹ️ About Us</button>
+          <button onclick="goPage('products')">📦 Products</button>
+          <button onclick="goPage('services')">⚙️ Services</button>
+          <button onclick="goPage('contact')">📞 Contact</button>
+          <button class="mobileCartBtn" onclick="goPage('cart')">
+            🛒 Cart <span class="count" id="mobileCartCount">0</span>
+          </button>
+          <button onclick="goPage('admin')">🔐 Admin</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero sitePage activePage" id="page-home">
+        <div>
+          <div class="eyebrow">Industrial Welding • Trusted Supply • Fast Service</div>
+          <h1>Reliable welding products for every workshop.</h1>
+          <p>Durga Lakshmi Welding Solution supplies welding electrodes, machines, accessories and workshop essentials
+            with dependable quality and straightforward ordering.</p>
+          <div class="actions"><button class="primary" onclick="goPage('products')">View Products →</button><button
+              class="secondary" onclick="goPage('contact')">Get a Quote</button></div>
+        </div>
+        <div class="heroCard bannerCard"><img src="DLWS-banner.png" alt="Durga Lakshmi Welding Solution Banner"></div>
+      </section>
+      <div class="industrialStrip">
+        <div class="trustBox"><b>✓ Quality Products</b><span>Workshop-ready welding range</span></div>
+        <div class="trustBox"><b>✓ Competitive Pricing</b><span>Value for regular buyers</span></div>
+        <div class="trustBox"><b>✓ WhatsApp Ordering</b><span>Simple and fast order flow</span></div>
+        <div class="trustBox"><b>✓ Business Support</b><span>For fabricators & workshops</span></div>
+      </div>
+      <section class="homeSections sitePage" id="page-homeExtra">
+        <div class="sectionHead">
+          <div>
+            <h2>Why choose Durga Lakshmi?</h2>
+            <p>A practical supplier built around quality, availability and service.</p>
+          </div>
+        </div>
+        <div class="featureGrid">
+          <div class="feature">
+            <div class="featureIcon">⚡</div>
+            <h3>Welding Electrodes</h3>
+            <p>Mild steel and specialty electrodes for fabrication, repair and daily workshop work.</p>
+          </div>
+          <div class="feature">
+            <div class="featureIcon">🔧</div>
+            <h3>Welding Machines</h3>
+            <p>Inverter, MIG and workshop appliances for different welding requirements.</p>
+          </div>
+          <div class="feature">
+            <div class="featureIcon">🛡️</div>
+            <h3>Accessories & Safety</h3>
+            <p>Holders, cables, helmets and essential welding accessories in one place.</p>
+          </div>
+        </div>
+        <div class="ctaBand">
+          <div>
+            <h2 style="margin:0">Need a bulk or business quote?</h2>
+            <p>Send your requirement directly on WhatsApp.</p>
+          </div><button class="primary" onclick="goPage('contact')">Contact Us →</button>
+        </div>
+      </section>
+      <section class="section sitePage" id="page-products">
+        <div class="pageTitle" style="padding-left:0;padding-right:0">
+          <div class="eyebrow">Product Catalogue</div>
+          <h1>Welding Products</h1>
+          <p>Choose your category, add products to cart and see your total instantly.</p>
+        </div>
+        <div class="sectionHead">
+          <div>
+            <h2>Our Range</h2>
+            <p>Electrodes, machines and workshop accessories.</p>
+          </div>
+          <div class="filters"><button class="filter active" onclick="filter('All',this)">All</button><button
+              class="filter" onclick="filter('Electrodes',this)">Electrodes</button><button class="filter"
+              onclick="filter('Appliances',this)">Machines & Accessories</button></div>
+        </div>
+        <div class="grid" id="grid"></div>
+      </section>
+      <section class="sitePage" id="page-about">
+        <div class="pageTitle">
+          <div class="eyebrow">About Our Company</div>
+          <h1>Durga Lakshmi Welding Solution</h1>
+          <div class="redLine"></div>
+          <p>We aim to be a dependable welding-products partner for fabricators, workshops, contractors and industrial
+            buyers.</p>
+        </div>
+        <div class="homeSections">
+          <div class="featureGrid">
+            <div class="feature">
+              <div class="featureIcon">🏭</div>
+              <h3>Industrial Focus</h3>
+              <p>Products selected for practical workshop and fabrication requirements.</p>
+            </div>
+            <div class="feature">
+              <div class="featureIcon">🤝</div>
+              <h3>Long-Term Service</h3>
+              <p>We focus on repeat business, transparent dealing and responsive support.</p>
+            </div>
+            <div class="feature">
+              <div class="featureIcon">📦</div>
+              <h3>Easy Ordering</h3>
+              <p>Browse online, build your cart and send the requirement directly through WhatsApp.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sitePage" id="page-services">
+        <div class="pageTitle">
+          <div class="eyebrow">What We Provide</div>
+          <h1>Services</h1>
+          <p>From everyday workshop supplies to business and bulk requirements.</p>
+        </div>
+        <div class="homeSections">
+          <div class="featureGrid">
+            <div class="feature">
+              <div class="featureIcon">⚙️</div>
+              <h3>Product Supply</h3>
+              <p>Welding electrodes, machines, cables, holders, helmets and workshop accessories.</p>
+            </div>
+            <div class="feature">
+              <div class="featureIcon">📋</div>
+              <h3>Bulk Requirements</h3>
+              <p>Share your quantity and requirement for a customised business quote.</p>
+            </div>
+            <div class="feature">
+              <div class="featureIcon">💬</div>
+              <h3>WhatsApp Support</h3>
+              <p>Fast communication for product questions, order details and availability.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sitePage" id="page-contact">
+        <div class="pageTitle">
+          <div class="eyebrow">Get In Touch</div>
+          <h1>Contact Durga Lakshmi</h1>
+          <p>Have a product requirement or need a quote? Send us the details.</p>
+        </div>
+        <div class="homeSections">
+          <div class="contactGrid">
+            <div class="contactCard">
+              <h2>Business Enquiry</h2>
+              <div class="redLine"></div>
+              <p><b>Durga Lakshmi Welding Solution</b></p>
+              <p>Welding electrodes • Machines • Accessories • Safety products</p>
+              <p>📞 Call / WhatsApp: <b>+91 8295993117</b><br>📍 Haryana, India</p><button class="primary"
+                onclick="window.open('https://wa.me/918295993117','_blank')">WhatsApp Us ↗</button>
+            </div>
+            <div class="contactCard">
+              <h2>Request a Quote</h2><input class="field" placeholder="Your name"><input class="field"
+                placeholder="Mobile number"><input class="field" placeholder="Product / requirement"><textarea
+                class="field" rows="5" placeholder="Quantity or message"></textarea><button class="primary"
+                style="width:100%" onclick="toast('Quote request ready for WhatsApp')">Send Enquiry</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sitePage" id="page-cart">
+        <div class="pageTitle">
+          <div class="eyebrow">Order Checkout</div>
+          <h1>Your Cart</h1>
+          <p>Review your items, check the exact total and send the complete order to WhatsApp.</p>
+        </div>
+        <div class="fullCart">
+          <div class="cartGrid">
+            <div class="fullCard">
+              <h2>Selected Products</h2>
+              <div id="pageCartItems"></div>
+            </div>
+            <div class="fullCard">
+              <h2>Order Summary</h2>
+              <div style="display:flex;justify-content:space-between;margin:12px 0;color:var(--muted)"><span>Total
+                  Items</span><span id="pageItemCount">0</span></div>
+              <div class="total"><span>Total</span><span id="pageCartTotal">₹0</span></div>
+              <h3>Customer Details</h3><input class="field" id="pageCustName" placeholder="Full name"><input
+                class="field" id="pageCustPhone" placeholder="Mobile number"><textarea class="field"
+                id="pageCustAddress" rows="4" placeholder="Delivery address"></textarea><button class="primary"
+                style="width:100%" onclick="sendPageWhatsApp()">Order on WhatsApp ↗</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sitePage" id="page-admin">
+        <div class="pageTitle">
+          <div class="eyebrow">Management</div>
+          <h1>Admin Dashboard</h1>
+          <p>Manage orders, products, customers and store performance.</p>
+        </div>
+        <div class="fullAdmin">
+          <div class="sideMenu"><button
+              class="active">Overview</button><button>Orders</button><button>Products</button><button>Customers</button><button>Settings</button>
+          </div>
+          <div class="adminGrid">
+            <div class="adminStat"><small>Total Orders</small><b>128</b></div>
+            <div class="adminStat"><small>Revenue</small><b>₹2.84L</b></div>
+            <div class="adminStat"><small>Products</small><b>42</b></div>
+            <div class="adminStat"><small>Pending</small><b>9</b></div>
+          </div>
+          <div class="fullCard" style="margin-top:20px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+              <h2>Recent Orders</h2><button class="primary" onclick="toast('Add Product form opened')">+ Add
+                Product</button>
+            </div>
+            <table class="adminTable">
+              <thead>
+                <tr>
+                  <th>Order</th>
+                  <th>Customer</th>
+                  <th>Items</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#DL-1028</td>
+                  <td>Rahul Sharma</td>
+                  <td>3</td>
+                  <td>₹4,850</td>
+                  <td><span class="status">New</span></td>
+                </tr>
+                <tr>
+                  <td>#DL-1027</td>
+                  <td>Aman Kumar</td>
+                  <td>7</td>
+                  <td>₹9,420</td>
+                  <td><span class="status">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td>#DL-1026</td>
+                  <td>Neeraj</td>
+                  <td>2</td>
+                  <td>₹2,150</td>
+                  <td><span class="status">Processing</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="toast" id="toast"></div>
+
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
-</body></html>
+</body>
+
+</html>
